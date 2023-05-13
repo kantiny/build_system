@@ -1,5 +1,4 @@
 dynaconf_merge: true
-
 default:
   NAME: BUILD_SYSTEM_SERVICE
   PORT: 8111
