@@ -1,3 +1,4 @@
+import logging
 
 from aiohttp import web
 
@@ -14,7 +15,7 @@ class BuildSystemService:
         self._app = None
         self.router = None
 
-    async def _init_route(self):
+    async def _init_route(self, _app):
         self.router = web.RouteTableDef()
 
     def init_app(self):
@@ -22,7 +23,7 @@ class BuildSystemService:
         Инициализация расширений приложения
         @return: приложение
         """
-        # logging.info('сервис %s (v.%s) запущен', config.NAME, config.VERSION)
+        logging.info('Build-система запущена')
         self._app = web.Application()
 
         self._app.on_startup.extend([

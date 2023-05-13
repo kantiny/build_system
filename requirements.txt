@@ -1,3 +1,2 @@
-dynaconf[yaml]==3.1.12
 aiohttp~=3.8.4
 aiohttp_cors~=0.7.0
