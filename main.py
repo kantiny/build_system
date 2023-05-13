@@ -1,8 +1,13 @@
+import logging
+
+from aiohttp import web
+
+from build_system.build_system_service import BuildSystemService
+
 if __name__ == '__main__':
-    print('ok')
-    # service = BuildSystemService()
-    # try:
-    #     web.run_app(app.init_app(), port=settings.PORT, access_log_class=AccessLogger)
-    #     logging.info('Сервис остановлен')
-    # except RuntimeError as re:
-    #     logging.error('Сервис остановлен из-за ошибки: {}'.format(re))
+    app = BuildSystemService()
+    try:
+        web.run_app(app.init_app())
+        logging.info('Сервис остановлен')
+    except RuntimeError as err:
+        logging.error('Сервис остановлен из-за ошибки: {}'.format(err))
